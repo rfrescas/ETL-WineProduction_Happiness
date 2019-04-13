@@ -1,6 +1,13 @@
-# ETL-WineProduction_Happiness
+# ETL - Wine Production and Happiness by Country
 
-- CSV dataset that has years 2012-2016 of wine production by country
-- Combine CSV dataset of various happiness factors
-- transform data not relevant to happiness
-- load into SQL
+Extract:
+  Wine Production data: https://data.world/makeovermonday/2018w14-world-wine-production/workspace/file?filename=Wine_Production_by_country.xlsx
+  Happiness statistics data: data:https://s3.amazonaws.com/happiness-report/2019/Chapter2OnlineData.xls
+
+Transform:
+  Join both data sets on country and year.
+  Drop columns != Happiness index variables
+
+Load:
+  Create MySQL database etl_project.db
+  Load data into table wine_happiness
