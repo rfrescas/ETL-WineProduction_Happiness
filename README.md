@@ -15,10 +15,11 @@
 - Utilizing the Pandas read_excel function, we were able to create to dataframes containing the repsective source data, named **wine_production_df** and **happiness_df**.
 - No columns needed to be dropped on the wine_production_df so the dataframe contained the following columns: *'Country'*, *'Year'*, and *'Wine production in mhl'*.
 - Since the happiness_df contained 26 columns, many of which were unnecessary, we dropped all columns not directly related to the Happiness Index variable and were left with the following: *'Country name'*, *'Year'*, *'Log GDP per capita'*, *'Social support'*, *'Healthy life expectancy at birth'*, *'Freedom to make life choices'*, *'Generosity'*, and *'Perceptions of corruption'*.
-- All column names of both data frames were changed to the same format for consistency.
+- All column names of both data frames were changed to use snake case format.
 
     Example: 'Healthy life expectancy at birth' -> 'healthy_life_expectancy_at_birth'
 
 ### (L)oad:
-- Create MySQL database etl_project.db
-- Load data into table wine_happiness
+- Before loading the dataframes into MySQL, we needed to create the database (**etl_project_db**) as well as the two tables (*happiness* and *wine_production*), which we did within the MySQL Workbench. See [queries.sql](https://github.com/rfrescas/ETL-WineProduction_Happiness/blob/master/queries.sql) for the detailed code.
+- Using SQLAlchemy to create a connection to our MySQL database, we used the to_sql function to load the two dataframes into our newly created tables.
+- Finally we used the 'SELECT \*' command to confirm the data were properly uploaded to the MySQL datbase (it was).
