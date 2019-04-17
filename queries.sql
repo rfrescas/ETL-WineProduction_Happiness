@@ -8,7 +8,7 @@ year INT,
 wine_production_in_mhl FLOAT
 );
 
-select * from wine_production;
+SELECT * FROM wine_production;
 
 CREATE TABLE happiness (
 country_name VARCHAR(100),
@@ -21,4 +21,4 @@ generosity FLOAT,
 perceptions_of_corruption FLOAT
 );
 
-select * from happiness;
+SELECT * FROM happiness;
